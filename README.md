@@ -8,8 +8,9 @@ Celt is written in Forth (and was tested in Gforth, specifically), so you will n
 3. *n* *x* *y* SET-RULE to add to the rule table. Cells in state *x* with neighbourhood *y* will transition to state *n*.
 4. *n* SOUP to generate a soup using state *n*.
 5. *n* GENERATIONS to simulate and display *n* generations.
-6. RESET-GRID to set all cells to state 0.
-7. RESET-ALIVE to clear the list of states considered alive.
-8. RESET-RULE to clear the rule table. Cells in any state will transition to state 0 regardless of neighbourhood.
-9. SET-NEIGHBOURHOOD VON-NEUMANN to switch to Von-Neumann neighbourhoods.
-10. SET-NEIGHBOURHOOD MOORE to return to the default Moore neighbourhood calculation.
+6. RULE? to check the current rule table.
+7. RESET-GRID to set all cells to state 0.
+8. RESET-ALIVE to clear the list of states considered alive.
+9. RESET-RULE to clear the rule table. Cells in any state will transition to state 0 regardless of neighbourhood.
+10. SET-NEIGHBOURHOOD VON-NEUMANN to switch to Von-Neumann neighbourhoods.
+11. SET-NEIGHBOURHOOD MOORE to return to the default Moore neighbourhood calculation.
