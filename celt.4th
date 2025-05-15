@@ -22,7 +22,10 @@ VARIABLE (NEIGHBOURHOOD)
 VARIABLE CURRENT-GENERATION
 VARIABLE RULE-TABLE RULE-TABLE-LENGTH 1 - ALLOT
 VARIABLE SEED UTIME DROP SEED !
-CREATE ALIVE
+CREATE (ALIVE)
+
+: ALIVE ( -- addr )
+  (ALIVE) @ ;
 
 : VERSION ( -- )
   ." celt version 1.0 copyright 2025 Midnight Salmon" ;
@@ -53,8 +56,8 @@ CREATE ALIVE
 
 : RULE? ( -- )
   PAGE ." Current Rule" CR ." ------------" CR
-  RULE-TABLE-LENGTH 0 DO RULE-TABLE I + C@ DUP 0= INVERT
-  IF ." To " . I CHECK-RULE SWAP ." if state = " . ." neighbourhood = " . CR
+  RULE-TABLE-LENGTH 0 DO RULE-TABLE I + C@ DUP IF
+  ." To " . I CHECK-RULE SWAP ." if state = " . ." neighbourhood = " . CR
   ELSE DROP THEN LOOP ." Otherwise to 0" CR CR
   ." States considered alive: "
   ALIVE C@ DUP 0= INVERT IF 0 DO ALIVE I + 1+ C@ . LOOP ELSE DROP THEN CR ;
@@ -136,3 +139,5 @@ CREATE ALIVE
 : SOUP ( state -- )
   RESET-GRID GRID-LENGTH 0 DO RANDOM 2 MOD IF DUP ELSE 0 THEN GRID I + C! LOOP
   DROP ;
+
+HERE (ALIVE) !
