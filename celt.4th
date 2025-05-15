@@ -28,7 +28,7 @@ CREATE (ALIVE) 0 ,
   (ALIVE) @ ;
 
 : VERSION ( -- )
-  ." celt version 1.0 copyright 2025 Midnight Salmon" ;
+  ." celt version 1.3 copyright 2025 Midnight Salmon" ;
 
 : PRINT-LIFE-CELL ( state -- )
   32 + EMIT 32 EMIT ;
