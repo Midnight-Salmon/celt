@@ -10,7 +10,7 @@
 
 \ Contact: mail@midnightsalmon.boo
 
-\ Version 1.0
+\ Version 1.1
 
 20 CONSTANT GRID-HEIGHT
 20 CONSTANT GRID-WIDTH
